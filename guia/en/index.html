@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Companies will pay to appear in ChatGPT — free AI Presence kit</title>
+<meta name="description" content="A new market: managing how businesses appear in ChatGPT and other AI tools. A free kit with a diagnostic, checklist, proposal, and monthly report to help you sell this service.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/presenca-na-ia/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/presenca-na-ia/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/presenca-na-ia/guia/es/">
+<meta property="og:title" content="AI Presence — companies will pay to appear in ChatGPT">
+<meta property="og:description" content="You can sell this service: registration, verification, and monitoring. Free kit.">
+<meta property="og:image" content="https://inematds.github.io/presenca-na-ia/guia/assets/banner-en.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#FACC15; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    --fill:#FACC15; --tint:rgba(250,204,21,.12); --ok:#7CE0C6; --bad:#F0918A;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#a16207; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    --fill:#FACC15; --tint:#FEF9C3; --ok:#0E6B55; --bad:#A83426;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  body.light pre .k{color:#f0c070}
+  body.light nav{background:rgba(246,247,249,.85)}
+  body.light .amb{color:var(--txt);background:linear-gradient(transparent 55%,#FACC15 55%)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  body.light main a:not(.btn),body.light footer a{color:#854d0e;text-decoration:underline;text-decoration-color:#FACC15;text-decoration-thickness:3px}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  p code,li code,td code{font-size:.9em;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:.05em .35em}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb);white-space:nowrap}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:var(--tint)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--fill);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  nav .links a.sec{white-space:nowrap}
+  @media(max-width:1360px){nav .links a.opt{display:none}}
+  @media(max-width:860px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(250,204,21,.18),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.15rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:44ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:66ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.95rem;margin:0}
+  .card p+p{margin-top:.6em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0;margin:.4em 0 0}
+  pre .c{color:#7d7d8a} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:28px}
+  .step>div{min-width:0}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--fill);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .5em}
+  .quem{display:inline-block;font-family:Sora;font-size:.75rem;letter-spacing:.06em;color:var(--txt);background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:.1em .7em;margin-left:.5em;vertical-align:middle;font-weight:600}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:4px}
+  /* números */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:720px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .stat b{display:block;font:800 clamp(1.9rem,4vw,2.6rem)/1.05 Sora,sans-serif;letter-spacing:-.02em;color:var(--amb)}
+  body.light .stat b{color:var(--txt)}
+  .stat span{display:block;color:var(--mut);font-size:.93rem;margin-top:.5em}
+  .fonte{font-size:.86rem;color:var(--mut);margin-top:14px;max-width:80ch}
+  /* trocas */
+  .troca{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:26px 0;border-top:1px solid var(--line)}
+  .troca:first-of-type{border-top:none}
+  .troca .n{width:64px;height:64px;border-radius:14px;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;font:800 1.6rem Sora,sans-serif;color:var(--amb)}
+  body.light .troca .n{color:var(--txt);background:var(--fill);border-color:var(--fill)}
+  .troca h3{font-size:1.3rem;margin-bottom:.35em}
+  .troca p{margin:.35em 0;max-width:72ch}
+  .troca .ex{margin-top:.8em;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--fill);border-radius:10px;padding:12px 16px;font-size:.95rem;color:var(--mut);max-width:76ch}
+  .troca .ex b{color:var(--txt)}
+  @media(max-width:540px){.troca{grid-template-columns:1fr}}
+  /* três finais */
+  .vs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;max-width:900px}
+  @media(max-width:720px){.vs{grid-template-columns:1fr}}
+  .vs div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.93rem}
+  .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
+  .vs .r{display:block;margin-top:.5em;font-weight:600}
+  .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
+  .card ul{margin:8px 0 0;padding-left:20px}.card li{margin:5px 0}
+  /* prova */
+  .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
+  body.light .prova{border-color:#EAB308}
+  .tl{list-style:none;margin:0;padding:0;counter-reset:t}
+  .tl li{position:relative;padding:0 0 18px 48px;counter-increment:t}
+  .tl li::before{content:counter(t);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:10px;background:var(--fill);color:#1a1206;font:800 .95rem/32px Sora,sans-serif;text-align:center}
+  .tl li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+  .tl li:last-child::after{display:none}
+  .tl b{font-family:Sora}
+  blockquote{margin:6px 0 0;padding:14px 18px;border-left:3px solid var(--fill);background:var(--bg2);border-radius:0 10px 10px 0;font-size:1.02rem}
+  .prova .rod{font-size:.86rem;color:var(--mut);margin-top:14px}
+  /* parte técnica */
+  .techhead{background:var(--bg2);border-top:3px solid var(--fill);padding:58px 0 8px}
+  .techhead h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:.3em 0 0}
+  .techhead .sub{color:var(--mut);margin:.6em 0 1.2em;max-width:66ch}
+  .techzone{background:var(--bg2)}
+  .techzone .card{background:var(--card)}
+  .tbl{width:100%;border-collapse:collapse;font-size:.93rem}
+  .tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{font-family:Sora;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  @media(max-width:600px){.tbl thead{display:none} .tbl tr{display:block;border-bottom:1px solid var(--line);padding:6px 0} .tbl tr:last-child{border-bottom:none} .tbl td{display:block;border:none;padding:4px 14px}}
+</style>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🤝</span> AI Presence</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#explicado">The opportunity</a>
+    <a class="sec" href="#dia">Your day</a>
+    <a class="sec" href="#como">How it works</a>
+    <a class="sec" href="#comecar">How to start</a>
+    <a class="sec opt" href="#base">The basis</a>
+    <a class="sec opt" href="#prova">The proof</a>
+    <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/presenca-na-ia" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">A new market · ChatGPT Business (OpenAI, 10/11/2026) · free kit</span>
+      <h1>Companies will pay to <span class="amb">appear in ChatGPT</span>. You can sell this service.</h1>
+      <p class="lead">A customer asks AI which business in their city provides a service, but the business does not appear, or a different business with a similar name does. Almost no business owner knows this can be fixed. With the <strong>AI Presence</strong> kit, you show them the problem, register and verify their business, then charge a monthly fee to monitor it.</p>
+      <div class="cta">
+        <a class="btn" href="#explicado">What you get</a>
+        <a class="btn ghost" href="#comecar">How to start</a>
+      </div>
+    </div>
+    <figure><img src="../assets/banner-en.jpg" alt="AI Presence: companies will pay to appear in ChatGPT, and you can sell this service"></figure>
+  </div>
+</header>
+
+<main>
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">In a nutshell</span>
+  <p><strong>AI Presence (Presença na IA)</strong> is a free kit that helps you offer a service to manage a business's presence across AI tools. This includes registering with the <strong>ChatGPT Business</strong> (launched in beta by OpenAI on 10/11/2026), verifying that the business belongs to its owner, making sure its profile has the correct details, and monitoring it every month. It's for people who work in technology, digital marketing, consulting, or agencies. The kit includes a "before" diagnostic, a client checklist, a proposal, a monthly report, and a ready-to-use prompt to have an AI put everything together with you. For the registration steps with real screenshots, see the companion kit <a href="https://inematds.github.io/empresa-no-chatgpt/guia/en/" target="_blank" rel="noopener">Business on ChatGPT</a>.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="AI Presence: the problem, the initial diagnostic, registration and verification, consistent details everywhere, monthly monitoring, and how to sell the service" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<section id="explicado"><div class="wrap">
+  <span class="chip">The opportunity</span>
+  <h2>A service <span class="amb">almost nobody offers</span> yet</h2>
+  <div class="grid g2">
+    <div class="card"><h3>😩 The business today</h3><p>A customer asks ChatGPT, "Which are the best technology companies in my area?" or "What do you know about company X?" The business does not appear. Or a different business with a similar name appears, with the wrong phone number.</p><p>The owner does not even know there is an official place to say who they are.</p></div>
+    <div class="card"><h3>💼 With you</h3><p>You show what AI tools say today, register and verify the official profile, correct the details everywhere, and come back each month with a report.</p><p>You charge once for setup and then charge a monthly monitoring fee.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>1.2 billion</b><span>people use ChatGPT every week, according to OpenAI.</span></div>
+    <div class="stat"><b>5</b><span>things you can sell: registration, verification, a business profile, visibility across several AI tools (ChatGPT, Gemini, Claude, and Perplexity, an AI search tool), and monitoring.</span></div>
+    <div class="stat"><b>$0</b><span>to use the kit. Registering with ChatGPT is also free; you charge for your work.</span></div>
+  </div>
+</div></section>
+
+<section id="base"><div class="wrap">
+  <span class="chip">Where it comes from</span>
+  <h2>The foundation: an <span class="amb">OpenAI</span> announcement and a real registration</h2>
+  <div class="grid g2">
+    <div class="card"><h3>📰 OpenAI, 10/11/2026</h3><p>"Businesses in ChatGPT," in beta: in the Business Center, a business claims its profile, updates its information, and sees data on how people interact with it (mentions, website clicks, and topics where it appears). The figure of 1.2 billion people per week comes from the same announcement.</p><p><a href="https://openai.com/index/introducing-businesses-chatgpt/" target="_blank" rel="noopener">Read the announcement</a></p></div>
+    <div class="card"><h3>🏪 INEMATDS registration</h3><p>On 22/11/2026, we registered our business with the Business Center and verified our domain (the website address, inema.club). Before that, a search for our brand showed an environmental institute. Screenshots and step-by-step instructions are in the companion kit.</p><p><a href="https://inematds.github.io/empresa-no-chatgpt/guia/en/" target="_blank" rel="noopener">Business on ChatGPT</a></p></div>
+  </div>
+</div></section>
+
+<section id="dia"><div class="wrap">
+  <span class="chip">Your day</span>
+  <h2>How this <span class="amb">changes your day</span></h2>
+  <div class="grid g3">
+    <div class="card"><h3>🧑‍💻 You build websites or do marketing</h3><p><strong>Today:</strong> you sell websites, social media, and ads.<br><strong>With the kit:</strong> add a new item to your proposal. The client understands it in a minute when they see another business in their place.</p></div>
+    <div class="card"><h3>🧭 You are a consultant</h3><p><strong>Today:</strong> you talk about AI in general terms.<br><strong>With the kit:</strong> bring a scored diagnostic and show the same client before and after.</p></div>
+    <div class="card"><h3>🏢 You run an agency</h3><p><strong>Today:</strong> your revenue depends on new projects.<br><strong>With the kit:</strong> every client becomes a monthly monitoring account.</p></div>
+  </div>
+  <div class="prova" style="margin-top:18px">
+    <ol class="tl">
+      <li><b>9 a.m. · the diagnostic</b><br><span class="mut">Four identical questions in ChatGPT, Gemini, Claude, and Perplexity. The kit scores each answer and gives a score from 0 to 100.</span></li>
+      <li><b>10 a.m. · the conversation with the owner</b><br><span class="mut">"Ask ChatGPT about your business": they see a competitor in their place.</span></li>
+      <li><b>11 a.m. · the proposal</b><br><span class="mut">The kit's template spells out what you do and what you do not promise.</span></li>
+      <li><b>That week · setup</b><br><span class="mut">Registration, a DNS record, and the same business profile on the website, Google, and social media.</span></li>
+      <li><b>Every month · the report</b><br><span class="mut">A fresh diagnostic, what changed, and what is still wrong (plus the mentions and clicks dashboard when it becomes available).</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section id="video"><div class="wrap">
+  <span class="chip">In video</span>
+  <h2>Understand it in a few minutes</h2>
+  <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
+  <p class="sub">The video is being made and will appear here as soon as it is published.</p>
+</div></section>
+
+<section id="como"><div class="wrap">
+  <span class="chip">How it works, in plain language</span>
+  <h2>The five parts of the <span class="amb">service</span></h2>
+  <div class="grid g3">
+    <div class="card"><h3>🪪 Registration</h3><p>It's the business's ID card in AI. You search for the business in the Business Center and create a profile, or claim one that already exists ("claim" means asking to be recognized as the owner of a profile ChatGPT created on its own).</p></div>
+    <div class="card"><h3>🔐 Verification</h3><p>It's like having a document notarized. A line in the "DNS" (the control panel where the website address is set up) proves that the client owns the website. Then the owner confirms their identity.</p></div>
+    <div class="card"><h3>📋 Business profile</h3><p>Name, website, category, and a description of up to 300 characters, kept the same on the website, Google, and social media. Consistent information everywhere makes things clearer for AI.</p></div>
+    <div class="card"><h3>🌐 Several AI tools</h3><p>ChatGPT, Gemini, Claude, and Perplexity read the internet in different ways. You check all four, not just one.</p></div>
+    <div class="card"><h3>📈 Monitoring</h3><p>Every month, run the same diagnostic to compare with the previous month. When the Business Center dashboard (mentions and clicks) becomes available to the client, it goes into the report. The dashboard only opens after identity verification, and we have not seen it yet.</p></div>
+    <div class="card"><h3>🚫 What it does not promise</h3><p>The Business Center is in beta, and registering does not guarantee a recommendation or the top spot. You sell organization and monitoring.</p></div>
+  </div>
+</div></section>
+
+<section id="comecar"><div class="wrap">
+  <span class="chip">How to start</span>
+  <h2>Start with a <span class="amb">diagnostic</span> for a business you know</h2>
+  <p class="sub">You can start today without installing anything, using only a browser. If you already use an AI agent (an assistant that works on your computer, such as Claude Code by Anthropic or Codex by OpenAI, both with paid plans), it can put together the report and proposal with you.</p>
+  <div class="card" style="margin-bottom:16px"><h3>✋ No agent? Use only a browser</h3><p>1. Choose a business you know (it can be your own).<br>2. Open ChatGPT, Gemini, Claude, and Perplexity, each in a new conversation, and ask the same four questions: <em>"What do you know about [business name]?"</em>, <em>"What are the best [service] businesses in [city]?"</em>, <em>"What is the official website of [business name]?"</em>, and <em>"Can you recommend a [service] business in [city]?"</em>.<br>3. For each answer, note in a spreadsheet: does the business appear? Is the website correct? Did another business appear in its place?<br>4. Show the spreadsheet to the owner: this is your "before." The proposal and report templates are in the kit on GitHub, ready to copy and fill in.</p></div>
+  <div class="grid g3">
+    <div class="card"><h3>1. Open the agent</h3><p>With an agent: open Claude Code or Codex in an empty folder on your computer.</p></div>
+    <div class="card"><h3>2. Paste the prompt</h3><p>Paste the prompt below and tell it which business to diagnose (it can be your own).</p></div>
+    <div class="card"><h3>3. Approve what makes sense</h3><p>You ask the questions in the AI tools and paste the answers. The agent prepares the report and proposal and proceeds only with your approval.</p></div>
+  </div>
+  <div class="pedido" style="margin-top:20px;position:relative">
+<p class="mut" style="font-size:.9rem">The text below is for the agent to read (that is why it refers to file names); you just copy and paste it.</p>
+<pre id="pedidoTxt" style="white-space:pre-wrap">Read the kit at https://github.com/inematds/presenca-na-ia (clone it if needed) and the companion kit
+https://github.com/inematds/empresa-no-chatgpt. I want to offer the AI Presence service to the business
+I will describe to you. Follow these steps in order and show me each result before moving on:
+1. Copy kit/exemplo-empresa.json to kit/cliente.json and fill it in with the details I provide (ask me for anything missing).
+2. Generate the 4 diagnostic questions. I will ask them in ChatGPT, Gemini, Claude, and Perplexity
+   and paste the answers; you will create an answers file for the initial diagnostic and report.
+3. Use the report to fill in kit/4-proposta.md in plain language, without promising a certain position in the answers.
+4. Create the profile details (description up to 300 characters) and check them with the empresa-no-chatgpt checker.
+Do not access any accounts, change DNS settings, or send anything to anyone unless I say "yes".</pre>
+    <button class="btn" id="copiarPedido" style="margin-top:10px">Copy the prompt</button>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🛠️ Are you technical?</h3><p>The diagnostic script, templates, and tests are in the GitHub README.</p><p><a class="btn ghost" href="https://github.com/inematds/presenca-na-ia/blob/main/README.en.md#technical-setup" target="_blank" rel="noopener">See the technical setup</a></p></div>
+</div></section>
+
+<section id="prova"><div class="wrap">
+  <span class="chip">The proof</span>
+  <h2>Our case: AI <span class="amb">swapped</span> our brand</h2>
+  <p class="sub">Nei Maldaner, founder of INEMA.CLUB, tells the story.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Before</h3><p>Years ago, Nei created a well-known adventure platform in Brazil. It was sold along with his technology company, and later the government started using the same brand for an environmental system. With a new domain, a ChatGPT search for the brand showed the environmental institute, not his company.</p></div>
+    <div class="card"><h3>After</h3><p>On 22/11/2026, we registered INEMATDS in the Business Center and verified the inema.club domain. The owner's identity verification was still pending, so the profile appeared as a draft and the mentions and clicks dashboard had not opened. Nei says that afterward, a search for the brand showed the right business; the "after" screenshot and a repeat diagnostic will be added here when we run the test again. See the screenshots in the <a href="https://inematds.github.io/empresa-no-chatgpt/guia/en/" target="_blank" rel="noopener">Business on ChatGPT guide</a>.</p></div>
+  </div>
+  <p class="fonte">The kit's diagnostic is our own way to compare the same client's before and after. It is not an official measure from any AI tool.</p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <span class="chip">Common questions</span>
+  <h2>Before you <span class="amb">sell</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>Do I need to code?</h3><p>No. For the diagnostic, just ask questions and take notes in a browser. The DNS record goes in the control panel of the company that sold the domain (Registro.br, Hostinger, GoDaddy, Cloudflare…); the companion kit shows you exactly where.</p></div>
+    <div class="card"><h3>How much should I charge?</h3><p>The kit does not make up a market price. It gives you a calculation: estimated hours × your hourly rate, with room for surprises, plus a monthly fee for monitoring.</p></div>
+    <div class="card"><h3>Can I guarantee the business will be recommended?</h3><p>No. The Business Center is in beta, and OpenAI does not promise a position. Guarantee what you deliver: an official profile, verification in progress, correct details, and a report.</p></div>
+    <div class="card"><h3>Do I need the client's password?</h3><p>No. Ask for editor access to the DNS panel or work together on the client's screen. The owner always confirms their own identity.</p></div>
+    <div class="card"><h3>Is this only for ChatGPT?</h3><p>The official registration is with ChatGPT. The diagnostic and consistent profile details also help with Gemini, Claude, and Perplexity.</p></div>
+    <div class="card"><h3>Does it cost anything?</h3><p>The kit and registration are free. An agent (Claude Code or Codex) is optional and requires a separate paid plan.</p></div>
+  </div>
+  <p class="fonte" style="margin-top:22px">What about you: could you sell this service, or use it for your own business? Free at inema.club, available directly online.</p>
+</div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">ChatGPT · Business Center</div><div class="pill">Diagnostic across 4 AI tools</div><div class="pill">Free kit</div>
+    <p style="margin-top:18px">AI Presence · free at inema.club, available directly online ·
+      <a href="https://github.com/inematds/presenca-na-ia">inematds/presenca-na-ia</a> ·
+      companion kit <a href="https://github.com/inematds/empresa-no-chatgpt">empresa-no-chatgpt</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='presenca-na-ia-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+  (function(){
+    var bt=document.getElementById('copiarPedido'), tx=document.getElementById('pedidoTxt');
+    if(!bt||!tx) return;
+    bt.addEventListener('click',function(){
+      try{ navigator.clipboard.writeText(tx.textContent).then(function(){ bt.textContent='Copied ✓'; setTimeout(function(){bt.textContent='Copy the prompt';},2000); }); }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
