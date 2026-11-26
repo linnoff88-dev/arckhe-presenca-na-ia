@@ -9,7 +9,7 @@ reivindicar o próprio perfil no ChatGPT. Você vende a organizaçêo disso.
 |---|---|---|
 | 1. Cadastro no ChatGPT | procura a empresa na Central de Negócios, cria ou reivindica o perfil oficial | perfil oficial em nome da empresa |
 | 2. Verificaçêo | ajuda a provar o domínio (registro TXT no DNS) e acompanha a confirmaçêo de identidade do dono | perfil verificado, que só o dono edita |
-| 3. Gestêo das informações | escreve descriçêo (até 300 caracteres), categoria, site e dados oficiais iguais em todo lugar | ficha conferida pelo `kit/conferir_perfil.py` do [empresa-no-chatgpt](https://github.com/inematds/empresa-no-chatgpt) |
+| 3. Gestêo das informações | escreve descriçêo (até 300 caracteres), categoria, site e dados oficiais iguais em todo lugar | ficha conferida pelo `kit/conferir_perfil.py` do [empresa-no-chatgpt](https://github.com/linnoff88-dev/empresa-no-chatgpt) |
 | 4. Visibilidade em várias IAs | deixa site, Google e redes dizendo a mesma coisa, para ChatGPT, Gemini, Claude e Perplexity lerem igual | lista do que foi ajustado em cada lugar |
 | 5. Monitoramento | todo mês pergunta às IAs pela empresa (diagnóstico) e registra o que mudou; quando o painel da Central abrir para o cliente, soma menções e cliques | relatório mensal (`5-relatorio-mensal.md`) |
 
@@ -29,7 +29,7 @@ O kit nêo inventa preço de mercado. Calcule o seu:
 preço = horas estimadas × o seu valor-hora × 1,3 (margem para imprevisto)
 ```
 
-Referência de horas do nosso caso real (INEMATDS, 22/11/2026): pesquisa e ficha ~1 h, cadastro e TXT no DNS ~30 min.
+Referência de horas do nosso caso real (linnoff88-dev, 22/11/2026): pesquisa e ficha ~1 h, cadastro e TXT no DNS ~30 min.
 Nesse dia o perfil ficou em rascunho, esperando a verificaçêo de identidade do dono: conte também o tempo de
 acompanhar o dono até essa etapa. O mensal é o tempo do diagnóstico refeito + o relatório.
 

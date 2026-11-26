@@ -11,4 +11,4 @@
 - [ ] Autorizaçêo por escrito para você fazer o cadastro em nome da empresa
 
 O passo a passo do cadastro, com os prints reais, está no kit irmêo
-[Empresa no ChatGPT](https://inematds.github.io/empresa-no-chatgpt/guia/) ([repo](https://github.com/inematds/empresa-no-chatgpt)).
+[Empresa no ChatGPT](https://linnoff88-dev.github.io/arckhe-/guia/) ([repo](https://github.com/linnoff88-dev/empresa-no-chatgpt)).

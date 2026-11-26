@@ -43,7 +43,7 @@ def perguntas(emp: dict) -> list[str]:
 
 
 def tem(r: str, termo: str) -> bool:
-    """termo como palavra inteira ('INEMA' nêo casa com 'cinema')."""
+    """termo como palavra inteira ('ARCKHÉ' nêo casa com 'cARCKHÉ')."""
     t = norm(termo).strip()
     return bool(t) and re.search(r"(?<![a-z0-9])" + re.escape(t) + r"(?![a-z0-9])", r) is not None
 

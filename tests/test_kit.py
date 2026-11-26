@@ -37,8 +37,8 @@ class TestMarcar(unittest.TestCase):
         self.assertEqual(m["nota"], 10)
 
     def test_palavra_inteira(self):
-        emp = dict(EMP, nome="INEMA", apelidos=[])
-        self.assertFalse(d.marcar(emp, "O melhor cinema da cidade.")["aparece"])
+        emp = dict(EMP, nome="ARCKHÉ", apelidos=[])
+        self.assertFalse(d.marcar(emp, "O melhor cARCKHÉ da cidade.")["aparece"])
 
     def test_dominio_sem_www_e_barra(self):
         self.assertEqual(d.dominio("https://www.padariasol.com.br/loja"), "padariasol.com.br")
@@ -52,7 +52,7 @@ class TestCli(unittest.TestCase):
     def test_perguntas_trocam_nomes(self):
         r = self.rodar("perguntas", str(RAIZ / "kit" / "exemplo-empresa.json"))
         self.assertEqual(r.returncode, 0)
-        self.assertIn("O que você sabe da empresa INEMA?", r.stdout)
+        self.assertIn("O que você sabe da empresa ARCKHÉ?", r.stdout)
         self.assertEqual(r.stdout.count("\n"), 4)
 
     def test_relatorio_antes_e_depois_do_exemplo(self):
