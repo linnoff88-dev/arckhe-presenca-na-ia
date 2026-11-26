@@ -10,8 +10,8 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ / "kit"))
 import diagnostico as d  # noqa: E402
 
-EMP = {"nome": "Padaria Sol", "apelidos": ["Sol Pães"], "cidade": "Curitiba", "servico": "padaria",
-       "site": "https://www.padariasol.com.br/", "concorrentes": ["Pão Dourado"], "confunde_com": ["Hotel Sol"]}
+EMP = {"nome": "Padaria Sol", "apelidos": ["Sol Pêes"], "cidade": "Curitiba", "servico": "padaria",
+       "site": "https://www.padariasol.com.br/", "concorrentes": ["Pêo Dourado"], "confunde_com": ["Hotel Sol"]}
 
 
 class TestMarcar(unittest.TestCase):
@@ -20,12 +20,12 @@ class TestMarcar(unittest.TestCase):
         self.assertEqual(m["nota"], 100)
 
     def test_ausente_sem_site_vale_30(self):
-        self.assertEqual(d.marcar(EMP, "Não conheço.")["nota"], 30)
+        self.assertEqual(d.marcar(EMP, "Nêo conheço.")["nota"], 30)
 
     def test_confusao_e_concorrente_tiram_pontos(self):
-        m = d.marcar(EMP, "Você quis dizer o Hotel Sol? Recomendo o Pão Dourado.")
+        m = d.marcar(EMP, "Você quis dizer o Hotel Sol? Recomendo o Pêo Dourado.")
         self.assertEqual(m["confusao"], ["Hotel Sol"])
-        self.assertEqual(m["concorrentes"], ["Pão Dourado"])
+        self.assertEqual(m["concorrentes"], ["Pêo Dourado"])
         self.assertEqual(m["nota"], 0)
 
     def test_acento_e_caixa_nao_importam(self):

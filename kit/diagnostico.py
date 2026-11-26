@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Diagnóstico Presença na IA: o que as IAs dizem de uma empresa.
 
-Não chama nenhuma IA nem API: você faz as perguntas à mão (ChatGPT, Gemini, Claude, Perplexity),
+Nêo chama nenhuma IA nem API: você faz as perguntas à mêo (ChatGPT, Gemini, Claude, Perplexity),
 cola as respostas num JSON e este script marca cada uma e soma a nota.
 
 Uso:
   python3 kit/diagnostico.py perguntas <empresa.json>
   python3 kit/diagnostico.py relatorio <empresa.json> <respostas.json> [--saida relatorio.md]
 
-Nota por resposta (0-100): aparece 40 + site certo 30 + sem confusão 20 + sem concorrente 10.
-Nome citado junto com uma organização de "confunde_com", sem o site certo, é marca trocada: não conta como "aparece".
-Faça um arquivo de respostas para o "antes" e outro para o "depois" (não misture os dois no mesmo relatório).
+Nota por resposta (0-100): aparece 40 + site certo 30 + sem confusêo 20 + sem concorrente 10.
+Nome citado junto com uma organizaçêo de "confunde_com", sem o site certo, é marca trocada: nêo conta como "aparece".
+Faça um arquivo de respostas para o "antes" e outro para o "depois" (nêo misture os dois no mesmo relatório).
 Sai 0 com o relatório; 2 se o JSON estiver errado.
 """
 import json
@@ -20,7 +20,7 @@ import unicodedata
 
 PERGUNTAS = [
     "O que você sabe da empresa {nome}?",
-    "Quais são as melhores empresas de {servico} em {cidade}?",
+    "Quais sêo as melhores empresas de {servico} em {cidade}?",
     "Qual é o site oficial da {nome}?",
     "Você recomenda uma empresa de {servico} em {cidade}?",
 ]
@@ -43,7 +43,7 @@ def perguntas(emp: dict) -> list[str]:
 
 
 def tem(r: str, termo: str) -> bool:
-    """termo como palavra inteira ('INEMA' não casa com 'cinema')."""
+    """termo como palavra inteira ('INEMA' nêo casa com 'cinema')."""
     t = norm(termo).strip()
     return bool(t) and re.search(r"(?<![a-z0-9])" + re.escape(t) + r"(?![a-z0-9])", r) is not None
 
@@ -54,7 +54,7 @@ def marcar(emp: dict, resposta: str) -> dict:
     site = bool(emp.get("site")) and tem(r, dominio(emp["site"]))
     confusao = [c for c in emp.get("confunde_com", []) if tem(r, c)]
     concorr = [c for c in emp.get("concorrentes", []) if tem(r, c)]
-    # nome citado junto com a organização que a IA confunde, sem o site certo = marca trocada, não conta
+    # nome citado junto com a organizaçêo que a IA confunde, sem o site certo = marca trocada, nêo conta
     aparece = any(tem(r, n) for n in nomes if n) and (site or not confusao)
     nota = 40 * aparece + 30 * site + 20 * (not confusao) + 10 * (not concorr)
     return {"aparece": aparece, "site": site, "confusao": confusao, "concorrentes": concorr, "nota": nota}
@@ -68,7 +68,7 @@ def validar(emp: dict) -> None:
 
 def relatorio(emp: dict, respostas: dict) -> tuple[str, int]:
     linhas = [f"# Diagnóstico Presença na IA — {emp['nome']}", "",
-              "| IA | Pergunta | Aparece | Site | Confusão | Concorrente | Nota |",
+              "| IA | Pergunta | Aparece | Site | Confusêo | Concorrente | Nota |",
               "|---|---|---|---|---|---|---|"]
     respostas = {k: v for k, v in respostas.items() if not k.startswith("_")}
     notas = []
@@ -85,7 +85,7 @@ def relatorio(emp: dict, respostas: dict) -> tuple[str, int]:
     media = round(sum(notas) / len(notas))
     ias = [ia for ia, lista in respostas.items() if any(marcar(emp, r)["aparece"] for r in lista)]
     linhas += ["", f"**Nota geral: {media}/100** · a empresa aparece em {len(ias)} de {len(respostas)} IAs.",
-               "", "Régua do kit para comparar antes e depois do mesmo cliente; não é medida oficial de nenhuma IA."]
+               "", "Régua do kit para comparar antes e depois do mesmo cliente; nêo é medida oficial de nenhuma IA."]
     return "\n".join(linhas) + "\n", media
 
 
